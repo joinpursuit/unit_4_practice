@@ -1,3 +1,12 @@
+Xavier:
+null checks - accounting for latency period by using if/else statement. if these are empty, show 'loading'. else (i.e. 'if') show the fully loaded page.
+
+Me:
+create-react-app file_name
+cd file_name
+npm install --save react-router react-router-dom
+npm install axios
+
 # Practice Exam
 
 For this exam, we have no opinion about what your component structure is, or where state is held. It's up to you to create a performant app with the routes we'd like to see.
