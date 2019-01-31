@@ -43,10 +43,12 @@ class Users extends Component {
   })
 
   return (
-    <div>
+    <div className='form'>
       <form onSubmit={this.handleSubmit}>
-      <input type='text' value={this.state.input} onChange={this.handleChange} placeholder='search user' />
-      <input type='submit' value='submit' />
+        <div className='input_button'>
+          <input type='text' value={this.state.input} onChange={this.handleChange} placeholder='search user' />
+          <input type='submit' value='submit' />
+        </div>
       </form>
       {usersDisplay}
     </div>

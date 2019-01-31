@@ -58,3 +58,8 @@
 .users {
   border: 1px solid black;
 }
+
+.input_button {
+  display: flex;
+  justify-content: center;
+}
