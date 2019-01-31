@@ -4,11 +4,12 @@ import TodoItems from './TodosItems'
 const Todos = (props) => {
   let todosDisplay = props.displayT.map(showing => {
     return (
+      <div key={showing.id}>
       <TodoItems
-        key={showing.id}
         title={showing.title}
         completed={showing.completed}
       />
+      </div>
     )
   })
   return (

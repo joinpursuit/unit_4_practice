@@ -3,6 +3,7 @@ import Posts from './Routes/Posts.js'
 import Albums from './Routes/Albums.js'
 import Todos from './Routes/Todos.js'
 import Users from './Routes/Users.js'
+import Photos from './Routes/Photos.js'
 import Home from './Home.js'
 import axios from 'axios'
 import { Route, Switch, Link } from 'react-router-dom'
@@ -16,19 +17,26 @@ class App extends Component {
       displayA: [],
       displayU: [],
       displayT: [],
-      displayPC: []
+      displayPC: [],
+      displayPh: []
     }
   }
 
+
   componentDidMount() {
     axios.get('https://jsonplaceholder.typicode.com/posts')
-      .then(res => {
-        this.setState({ displayP: res.data })
+      .then(response => {
+        this.setState({ displayP: response.data })
+      })
+
+    axios.get('https://jsonplaceholder.typicode.com/photos')
+      .then(response => {
+        this.setState({ displayPh: response.data })
       })
 
     axios.get('https://jsonplaceholder.typicode.com/comments')
-      .then(res => {
-        this.setState({ displayPC: res.data })
+      .then(response => {
+        this.setState({ displayPC: response.data })
       })
 
     axios.get('https://jsonplaceholder.typicode.com/users')
@@ -37,13 +45,13 @@ class App extends Component {
       })
 
     axios.get('https://jsonplaceholder.typicode.com/albums')
-      .then(resp => {
-        this.setState({ displayA: resp.data })
+      .then(response => {
+        this.setState({ displayA: response.data })
       })
 
     axios.get('https://jsonplaceholder.typicode.com/todos')
-      .then(respo => {
-        this.setState({ displayT: respo.data })
+      .then(response => {
+        this.setState({ displayT: response.data })
       })
   }
 
@@ -62,10 +70,12 @@ class App extends Component {
 
         <Switch>
           <Route exact path='/' component={Home}/>
-          <Route path='/posts' render={(props) => <Posts {...props} displayP={this.state.displayP} displayPC={this.state.displayPC}/>}/>
-          <Route path='/albums' render={(props) => <Albums {...props} displayA={this.state.displayA}/> }/>
+          <Route path='/posts' render={(props) => <Posts {...props} displayP={this.state.displayP} displayPC={this.state.displayPC} />} />
+          <Route exact path='/albums' render={(props) => <Albums {...props} displayA={this.state.displayA} displayPh= {this.state.displayPh} />} />
           <Route path='/todos' render={(props) => <Todos {...props} displayT={this.state.displayT} /> }/>
-          <Route path='/users' render={(props) => <Users {...props} displayU={this.state.displayU}/> }/>
+          <Route exact path='/users' render={(props) => <Users {...props} displayU={this.state.displayU}/> }/>
+          <Route path='/albums/:id' render={(props) => <Photos {...props} displayPh= {this.state.displayPh} />} />
+          <Route path='/users/:id/posts' render={(props) => <Users {...props} displayU={this.state.displayU} displayP={this.state.displayP} />} />
         </Switch>
       </div>
     );

@@ -1,11 +1,13 @@
 import React from 'react'
 
+
 const TodoItems = (props) => {
+
   return (
-    <div>
+    <div className='todos'>
     <ol>{props.usersId}</ol>
     <ul>title: {props.title}</ul>
-    <input type='checkbox' value={props.completed} checked={props.completed}/>
+    <input key={props.id} type='checkbox' value={props.completed} checked={props.completed}/>
     </div>
   )
 }

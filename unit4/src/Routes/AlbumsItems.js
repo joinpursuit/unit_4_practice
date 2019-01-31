@@ -2,11 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 
-const AlbumsItems = ({ props }) => {
-  console.log(props)
+
+
+const AlbumsItems = ( props ) => {
   return (
-    <div>
-    <li><Link to={`/albums/${props.id}`}>{props.title}</Link></li>
+    <div key={props.albumId} >
+    <li><Link key={props.id} to={`/albums/${props.props.id}`}>{props.title}</Link></li>
+    <Link to={`${props.userId}`}></Link>
     </div>
   )
 }

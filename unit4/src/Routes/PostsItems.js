@@ -1,11 +1,20 @@
 import React from 'react'
+import Comments from './Comments.js'
+import UsersItems from './UsersItems.js'
 
 const PostsItems = (props) => {
   return (
     <div>
-    <p>{props.userId}</p>
-    <h3>{props.title}</h3>
-    <li>{props.body}</li>
+    <UsersItems
+    name={props.name}
+    />
+    <h2>{props.title}</h2>
+    <p>{props.body}</p>
+    <Comments
+    key={props.id}
+    displayPC={props.displayPC}
+    postId={props.id}
+    />
     </div>
   )
 }

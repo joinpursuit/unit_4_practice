@@ -9,6 +9,7 @@ const Albums = (props) => {
       key={showing.id}
       title={showing.title}
       props={showing}
+      displayPh={props.displayPh}
       />
     )
   })

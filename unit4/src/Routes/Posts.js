@@ -1,30 +1,28 @@
 import React from 'react'
 import PostsItems from './PostsItems'
+import { Link } from 'react-router-dom'
+
 
 const Posts = (props) => {
   let showing = props.displayP.map(displays => {
     return (
+      <div key={displays.id} className='posts'>
       <PostsItems
-      key={displays.id}
       id={displays.userId}
+      name={props.name}
       title={displays.title}
-      body={displays.body} />
+      body={displays.body}
+      displayPC={props.displayPC}
+      postId={props.id}
+      />
+      </div>
     )
   })
 
-  // let showComments = props.displayPC.map(displaying => {
-  //   return (
-  //     <PostsItems
-  //     key={displaying.id}
-  //     id={displaying.postId}
-  //     name={displaying.name}
-  //     body={displaying.body}
-  //     />
-  //   )
-  // })
   return (
     <div className='PostsShowing'>
       Posts
+      <Link to='/users'>Back</Link>
       {showing}
     </div>
   )
