@@ -59,7 +59,7 @@
   border: 1px solid black;
 }
 
-.input_button {
+.input_button, .home {
   display: flex;
   justify-content: center;
 }
