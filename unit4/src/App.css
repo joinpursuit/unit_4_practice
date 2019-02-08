@@ -1,0 +1,65 @@
+/* .App {
+  text-align: center;
+} */
+
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+  background-color: beige;
+  border: 1px solid black
+}
+
+.body {
+  padding-left: 50px;
+  font-family: cursive;
+}
+
+.email {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.posts {
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  margin-bottom: 19px;
+}
+
+.PostsShowing {
+  background-color: #E2F7F7
+}
+
+.photos {
+  border: 1px solid black;
+  padding: 10px;
+  box-shadow: 5px 10px;
+  margin-bottom: 19px;
+}
+
+.todos {
+  border: 1px solid black;
+}
+
+.users {
+  border: 1px solid black;
+}
+
+.input_button, .home {
+  display: flex;
+  justify-content: center;
+}
